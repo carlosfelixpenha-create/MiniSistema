@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"name": "automacao-cypress-javascript",
+			"path": "../automacao-cypress-javascript"
+		},
+		{
+			"name": "automacao-selenium-python",
+			"path": "../automacao-selenium-python"
+		},
+		{
+			"name": "automacao-selenium-typescript",
+			"path": "../automacao-selenium-typescript"
+		},
+		{
+			"path": "../automacao_postman_newman"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}
