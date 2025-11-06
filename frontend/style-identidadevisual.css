@@ -1,0 +1,157 @@
+/* === Paleta de Cores === */
+:root {
+  --rosa-suave: #fce4ec;
+  --salmão: #ef5350;
+  --vermelho-clarinho: #f06292;
+  --dourado: #fbc02d;
+  --cinza-escuro: #333333;
+  --placeholder-rosa: #e91e63;
+  --fundo-claro: #fce4ec;
+}
+
+/* === Tipografia === */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--rosa-suave);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* === Container principal === */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  width: 100%;
+}
+
+/* === Logo === */
+.logo {
+  margin-bottom: 24px;
+}
+
+.logo-img {
+  max-width: 220px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* === Formulário === */
+.form-box {
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-box h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--vermelho-clarinho);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* === Campos de entrada === */
+form {
+  display: contents; /* herda layout da .form-box */
+}
+
+form input {
+  padding: 12px;
+  border: 1px solid #f9c5d5;
+  box-shadow: 0 0 4px rgba(249, 197, 213, 0.3);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+form input::placeholder {
+  color: var(--placeholder-rosa);
+}
+
+/* === Botão === */
+form button {
+  background-color: var(--vermelho-clarinho);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-end;
+  margin-top: 16px;
+}
+
+form button:hover {
+  background-color: var(--salmão);
+}
+
+/* === Link de cadastro === */
+.register-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.register-prompt {
+  color: var(--vermelho-clarinho);
+  font-size: 14px;
+}
+
+.register-prompt a {
+  color: var(--placeholder-rosa);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-prompt a:hover {
+  text-decoration: underline;
+  color: var(--salmão);
+}
+
+.layout {
+  display: flex;
+  max-width: 800px;
+  min-height: 520px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.logo-side {
+  background-color: #ffb6c1; /* rosa algodão doce */
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: white;
+}
+
+.logo-side h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  margin-top: 16px;
+}
+
+.form-box {
+  width: 60%;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
