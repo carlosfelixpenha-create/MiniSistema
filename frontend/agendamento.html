@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendamento - MiniSistema</title>
+  <link rel="stylesheet" href="style-identidadevisual.css" />
+</head>
+<body>
+  <div class="layout">
+    <div class="logo-side">
+      <img src="logo.png" class="logo-img" alt="Logo do salão" />
+    </div>
+
+    <div class="form-box">
+      <h2>AGENDAR HORÁRIO</h2>
+
+      <form id="agendamentoForm">
+        <input type="text" id="nome" placeholder="Seu nome" required />
+        <select id="tipoCorte" required>
+          <option value="">Selecione o tipo de corte</option>
+          <option value="Masculino - adulto">Masculino - adulto</option>
+          <option value="Feminino - adulto">Feminino - adulto</option>
+          <option value="Infantil">Infantil</option>
+        </select>
+        <input type="date" id="data" required />
+        <input type="time" id="horario" required />
+        <button type="submit" class="btn">Confirmar</button>
+      </form>
+
+      <div id="message" class="message"></div>
+
+      <div class="contact-info" style="margin-top: 20px;">
+        <p><strong>Já possui um agendamento?</strong> Entre em contato para alterar:</p>
+        <p style="font-size: 16px; font-weight: bold;">📞 (99) 99999-9999</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script externo com a lógica de agendamento -->
+  <script src="agendamento.js"></script>
+</body>
+</html>
