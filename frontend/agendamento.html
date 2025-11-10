@@ -15,24 +15,45 @@
     <div class="form-box">
       <h2>AGENDAR HORÁRIO</h2>
 
-      <form id="agendamentoForm">
-        <input type="text" id="nome" placeholder="Seu nome" required />
-        <select id="tipoCorte" required>
-          <option value="">Selecione o tipo de corte</option>
-          <option value="Masculino - adulto">Masculino - adulto</option>
-          <option value="Feminino - adulto">Feminino - adulto</option>
-          <option value="Infantil">Infantil</option>
-        </select>
-        <input type="date" id="data" required />
-        <input type="time" id="horario" required />
-        <button type="submit" class="btn">Confirmar</button>
-      </form>
+     <form id="agendamentoForm">
+  <!-- Campo nome preenchido automaticamente -->
+  <input type="text" id="nome" placeholder="Seu nome" readonly />
+
+  <!-- Campo de seleção do tipo de corte com classe de estilo -->
+  <select id="tipoCorte" class="campo" required>
+    <option value="">Selecione o tipo de corte</option>
+    <option value="Masculino - adulto">Masculino - adulto</option>
+    <option value="Feminino - adulto">Feminino - adulto</option>
+    <option value="Infantil">Infantil</option>
+  </select>
+
+  <!-- Campo de data com classe de estilo -->
+  <input type="date" id="data" class="campo" readonly required />
+
+  <!-- Campo de horário com classe de estilo -->
+<select id="horario" name="horario" required>
+  <option value="" disabled selected hidden>Selecione um horário</option>
+  <option value="09:00">09:00</option>
+  <option value="10:00">10:00</option>
+  <option value="11:00">11:00</option>
+  <option value="13:00">13:00</option>
+  <option value="14:00">14:00</option>
+  <option value="15:00">15:00</option>
+  <option value="16:00">16:00</option>
+  <option value="17:00">17:00</option>
+</select>
+</form>
+      
+           <!-- Botão exclusivo para administradores -->
+<div class="botoes-agendamento">
+  <button type="submit" class="btn">Confirmar</button>
+  <button id="adminAgendaBtn" class="btn" style="display: none;">Agenda</button>
+</div>
 
       <div id="message" class="message"></div>
 
-      <div class="contact-info" style="margin-top: 20px;">
-        <p><strong>Já possui um agendamento?</strong> Entre em contato para alterar:</p>
-        <p style="font-size: 16px; font-weight: bold;">📞 (99) 99999-9999</p>
+      <div class="aviso-agendamento" style="margin-top: 10px;">
+        <p><strong>Para reagendamento?</strong> Entre em contato:📞(99) 99999-9999</p>
       </div>
     </div>
   </div>

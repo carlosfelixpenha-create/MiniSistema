@@ -18,7 +18,68 @@ body {
   min-height: 100vh;
 }
 
-/* Área da tabela */
+/* === Estilo para campos com identidade visual unificada === */
+/* Aplica o mesmo estilo do campo Nome aos campos select, date e time */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+select {
+  color: #f06292; /* rosa algodão doce */
+
+  border: 2px solid #ffb6c1;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 0 4px rgba(236, 91, 135, 0.3);
+  outline: none;
+  transition: border-color 0.3s ease;
+  margin-bottom: 15px;
+}
+
+select {
+  appearance: none; /* remove estilo padrão */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="pink" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* ajusta a seta mais pra esquerda */
+  background-size: 30px;
+  padding-right: 40px; /* espaço pra não sobrepor o texto */
+}
+
+/* === Efeito ao focar nos campos === */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus {
+  border-color: #f06292; /* tom mais escuro ao focar */
+}
+
+/* === Cor dos placeholders === */
+input::placeholder,
+textarea::placeholder {
+  color: #ffb6c1; /* rosa algodão doce */
+  opacity: 1; /* garante visibilidade no Firefox */
+}
+
+/* === Cor do texto inicial do select (simulando placeholder) === */
+select:invalid {
+  color: #f06292;
+}
+
+/* === Placeholder específico para campos de texto, email e senha === */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  color: #ffb6c1;
+}
+
+/* === Área da tabela === */
 #userTable {
   width: 100%;
   max-width: 800px;
@@ -28,29 +89,23 @@ body {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
-/* Cabeçalho da tabela */
+
 #userTable th {
   background-color: var(--placeholder-rosa);
   color: white;
   padding: 12px;
   text-align: left;
+  background-color: #f5f5f5;
 }
-/* Linhas da tabela */
+
 #userTable td {
   padding: 10px;
   border-bottom: 1px solid #e91e63;
 }
 
-#userTable th {
-  background-color: #f5f5f5;
-}
-
-/* Alternância de cor nas linhas */
 #userTable tr:nth-child(even) {
   background-color: var(--rosa-suave);
 }
-
-
 
 /* === Container principal === */
 .container {
@@ -61,6 +116,7 @@ body {
   padding: 24px;
   width: 100%;
 }
+
 .logout-container {
   display: flex;
   justify-content: flex-end;
@@ -100,35 +156,11 @@ body {
   text-align: center;
 }
 
-/* === Campos de entrada === */
 form {
   display: contents;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  border: 2px solid #ffb6c1;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 16px;
-  box-shadow: 0 0 4px rgba(236, 91, 135, 0.3);
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-  border-color: #e78d9a;
-}
-input[type="text"]::placeholder,
-input[type="email"]::placeholder,
-input[type="password"]::placeholder {
-  color: #ffb6c1; /* ou qualquer outra cor que quiser */
-}
-
-/* === Botão === */
+/* === Botões === */
 form button {
   background-color: var(--vermelho-clarinho);
   color: #fff;
@@ -145,6 +177,7 @@ form button {
 button[type="submit"] {
   margin-bottom: 2px;
 }
+
 button {
   padding: 6px 12px;
   background-color: #0275d8;
@@ -157,10 +190,10 @@ button {
 form button:hover {
   background-color: var(--salmão);
 }
-/* Botões de ação */
+
 #userTable button {
   padding: 6px 12px;
-  background-color: #00796b; /* tom complementar ao cabeçalho */
+  background-color: #00796b;
   color: white;
   border: none;
   border-radius: 4px;
@@ -170,6 +203,42 @@ form button:hover {
 
 #userTable button:hover {
   background-color: #004d40;
+}
+
+.botoes-agendamento {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+.aviso-agendamento {
+  background-color: #ffe4ec; /* rosa bem suave */
+  border: 2px dashed #ffb6c1; /* rosa algodão doce */
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #d6336c;
+  font-size: 16px;
+}
+.aviso-agendamento strong {
+  color: #ff4d6d;
+}
+
+.btn {
+  background-color: #f06292;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e91e63;
 }
 
 /* === Link de cadastro === */
@@ -197,6 +266,22 @@ form button:hover {
 .register-prompt a:hover {
   text-decoration: underline;
   color: var(--salmão);
+}
+
+/* === Link de login === */
+.register-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.register-wrapper a {
+  color: #e91e63;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-wrapper a:hover {
+  text-decoration: underline;
 }
 
 /* === Layout === */
@@ -235,11 +320,11 @@ form button:hover {
   align-items: center;
   margin-bottom: 20px;
 }
+
 .admin-header h1 {
   font-size: 24px;
   color: #333;
 }
-
 
 /* === Tabela === */
 table {
@@ -305,56 +390,9 @@ table tbody tr:nth-child(even) {
 
 /* === Responsividade === */
 @media (max-width: 480px) {
- .form-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* centraliza verticalmente */
-  gap: 16px;
-}
-
-  .logo-img {
-    max-width: 180px;
-  }
-  #logoutBtn {
-  padding: 8px 16px;
-  background-color: #d9534f;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-  .layout {
+  .form-box {
+    display: flex;
     flex-direction: column;
-  }
-
-  .logo-side {
-    width: 100%;
-    padding: 24px;
-
-}
-/* Botão padrão */
-.btn {
-  padding: 8px 16px;
-  background-color: var(--placeholder-rosa); /* rosa vibrante */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: var(--vermelho-clarinho); /* tom mais claro no hover */
-}
-
-/* Botão de ação perigosa */
-.btn-danger {
-  background-color: var(--salmão) !important;
-}
-
-button.btn.btn-danger:hover {
-  background-color: var(--vermelho-clarinho);
-}
+    justify-content: center;
+    gap: 16px;
+ 
